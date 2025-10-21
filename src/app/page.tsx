@@ -1,95 +1,91 @@
+import Link from "next/link";
+
 import Image from "next/image";
-import styles from "../../public/styles/page.module.css";
+
+import { Button, Container, Flex, Heading, Text } from "@radix-ui/themes";
+
+import { APP_NAME } from "@/lib/constants";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Container px="4">
+      <main>
+        <Flex
+          direction={{
+            initial: "column",
+            md: "row",
+          }}
+          align="center"
+          pt="9"
+        >
+          <Flex
+            direction="column"
+            height={{
+              sm: "400px",
+            }}
+            justify="center"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+            <Heading
+              size={{
+                initial: "8",
+                sm: "9",
+              }}
+              weight="medium"
+              align={{
+                initial: "center",
+                sm: "left",
+              }}
+            >
+              Your bookmarks easily accessible wherever you go
+            </Heading>
+            <Text
+              as="p"
+              size="5"
+              my="4"
+              color="gray"
+              align={{
+                initial: "center",
+                sm: "left",
+              }}
+            >
+              {APP_NAME} stores your bookmarks in a safe place readily available
+              when you need it.
+            </Text>
+            <Flex
+              direction={{
+                initial: "column",
+                sm: "row",
+              }}
+              gap="2"
+              align="center"
+            >
+              <Button type="button" radius="full" size="3" asChild>
+                <Link href="#">Sign in</Link>
+              </Button>
+              <Button
+                type="button"
+                radius="full"
+                size="3"
+                variant="ghost"
+                asChild
+                style={{
+                  margin: 0,
+                  padding: "0 16px",
+                  height: 40,
+                }}
+              >
+                <Link href="#">Create account</Link>
+              </Button>
+            </Flex>
+          </Flex>
+          <Image
+            src="/human-running.png"
+            alt="A human running with coffee"
+            width={336}
+            height={400}
+          />
+        </Flex>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </Container>
   );
 }
