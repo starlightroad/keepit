@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { Button, Container, Flex, Heading, Text } from "@radix-ui/themes";
 
-import { APP_NAME } from "@/lib/constants";
+import { APP_NAME, APP_SLOGAN } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -36,7 +36,7 @@ export default function Home() {
                 sm: "left",
               }}
             >
-              Your bookmarks easily accessible wherever you go
+              {APP_SLOGAN}
             </Heading>
             <Text
               as="p"
