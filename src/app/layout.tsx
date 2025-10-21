@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+
 import "../../public/styles/globals.css";
+
 import "@radix-ui/themes/styles.css";
+
 import { Theme } from "@radix-ui/themes";
+
 import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
